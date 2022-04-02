@@ -1,0 +1,146 @@
+[
+    {
+    "role": "slime",
+    "lvl": 1,
+    "exp": 2,
+    "gold": 1,
+    "hp": 10,
+    "atk": 2,
+    "def": 1
+    },
+    {
+    "role": "wolf",
+    "lvl": 3,
+    "exp": 6,
+    "gold": 2,
+    "hp": 26,
+    "atk": 6,
+    "def": 4
+    },
+    {
+    "role": "goblin",
+    "lvl": 4,
+    "exp": 4,
+    "gold": 10,
+    "hp": 40,
+    "atk": 12,
+    "def": 10
+    },
+    {
+    "role": "skeleton",
+    "lvl": 10,
+    "exp": 14,
+    "gold": 12,
+    "hp": 100,
+    "atk": 24,
+    "def": 18
+    },
+    {
+    "role": "ghost",
+    "lvl": 12,
+    "exp": 24,
+    "gold": 6,
+    "hp": 200,
+    "atk": 40,
+    "def": 0
+    },
+    {
+    "role": "demon knight",
+    "lvl": 20,
+    "exp": 36,
+    "gold": 40,
+    "hp": 480,
+    "atk": 80,
+    "def": 100
+    },
+    {
+    "role": "demon general",
+    "lvl": 40,
+    "exp": 160,
+    "gold": 100,
+    "hp": 1200,
+    "atk": 260,
+    "def": 200
+    },
+    {
+    "role": "demon lord",
+    "lvl": 80,
+    "exp": 400,
+    "gold": 400,
+    "hp": 6000,
+    "atk": 600,
+    "def": 600
+    },
+    {
+    "role": "demon king",
+    "lvl": 100,
+    "exp": 999,
+    "gold": 999,
+    "hp": 9999,
+    "atk": 999,
+    "def": 999
+    },
+    {
+    "role": "mage of sloth",
+    "lvl": 100,
+    "exp": 2000,
+    "gold": 2000,
+    "hp": 10000,
+    "atk": 2000,
+    "def": 1000
+    },
+    {
+    "role": "mage of wrath",
+    "lvl": 100,
+    "exp": 3000,
+    "gold": 3000,
+    "hp": 15000,
+    "atk": 3000,
+    "def": 3000
+    },
+    {
+    "role": "mage of gluttony",
+    "lvl": 100,
+    "exp": 4000,
+    "gold": 6000,
+    "hp": 30000,
+    "atk": 3000,
+    "def": 10000
+    },
+    {
+    "role": "mage of envy",
+    "lvl": 100,
+    "exp": 8000,
+    "gold": 8000,
+    "hp": 60000,
+    "atk": 6000,
+    "def": 14000
+    },
+    {
+    "role": "mage of lust",
+    "lvl": 100,
+    "exp": 10000,
+    "gold": 12000,
+    "hp": 100000,
+    "atk": 12000,
+    "def": 20000
+    },
+    {
+    "role": "mage of pride",
+    "lvl": 100,
+    "exp": 60000,
+    "gold": 40000,
+    "hp": 600000,
+    "atk": 100000,
+    "def": 100000
+    },
+    {
+    "role": "mage of greed",
+    "lvl": 999,
+    "exp": 999999,
+    "gold": 999999,
+    "hp": 9999999,
+    "atk": 999999,
+    "def": 999999
+    }
+]

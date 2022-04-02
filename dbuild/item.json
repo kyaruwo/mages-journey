@@ -1,0 +1,52 @@
+[
+    {
+    "item": "stick",
+    "i_atk": 1,
+    "price": 10
+    },
+    {
+    "item": "branch",
+    "i_atk": 12,
+    "price": 120
+    },
+    {
+    "item": "staff",
+    "i_atk": 44,
+    "price": 440
+    },
+    {
+    "item": "staff of sloth",
+    "i_atk": 100,
+    "price": 1000
+    },
+    {
+    "item": "staff of wrath",
+    "i_atk": 200,
+    "price": 2000
+    },
+    {
+    "item": "staff of gluttony",
+    "i_atk": 300,
+    "price": 3000
+    },
+    {
+    "item": "staff of envy",
+    "i_atk": 400,
+    "price": 4000
+    },
+    {
+    "item": "staff of lust",
+    "i_atk": 600,
+    "price": 6000
+    },
+    {
+    "item": "staff of pride",
+    "i_atk": 800,
+    "price": 8000
+    },
+    {
+    "item": "staff of greed",
+    "i_atk": 1000,
+    "price": 10000
+    }
+]

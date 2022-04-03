@@ -40,6 +40,7 @@ class mage:
         print(f"atk: {s[6]} hp: {s[5]} def: {s[7]}")
 
     def bag(mage_id):
+        print("=o= Bag =o=")
         #0 item, 1 count, 2 atk
         for i in c.execute(
                 "select item, count, i_atk from Bag join Shop on Bag.item_id = Shop.id where mage_id = ?",
@@ -80,6 +81,11 @@ class mage:
 class travel:
 
     def shop(mage_id):
+        print("=o= Shop =o=")
+        #0 name, 1 role, 2 lvl, 3 gold ,4 exp, 5 hp, 6 atk, 7 def, 8 lvup
+        s = mage.stat(mage_id)  #mage gold
+        gold = s[3]
+        atk = s[6]
         item = []
         ipa = []
         for i in c.execute(
@@ -87,7 +93,8 @@ class travel:
             print(f"\nprice: {i[0]} i_atk: {i[1]} item: {i[2]}")
             item.append(i[2])
             ipa.append(i)
-        buy = input("\nhome | - sell | + buy : ")
+        print(f"\ngold in bag {gold}")
+        buy = input("\nhome | item: ")
         if buy == "home":
             return mage.title(), mage.printstat()
         elif buy not in item:
@@ -96,20 +103,23 @@ class travel:
         for i in ipa:  #0 price, 1 i_atk, 2 item, 3 id
             if i[2] == buy:
                 mage.title()
-                print(f"\nprice: {i[0]} i_atk: {i[1]} item: {i[2]}")
-                buy_count = input("\nhome | How many: ")
+                mage.bag(mage_id)
+                print("\n=o= Shop =o=")
+                print(f"price: {i[0]} i_atk: {i[1]} item: {i[2]}")
+                print(f"\ngold in bag {gold}")
+                buy_count = input("\nhome | - sell | buy: ")
                 if buy_count == "home":
                     return mage.title(), mage.printstat()
                 #default buy_count
-                if buy_count != int():
+                try:
+                    buy_count = int(buy_count)
+                except:
                     buy_count = 1
                 print(f"\nExchanging {buy_count} {buy}")
-                #0 name, 1 role, 2 lvl, 3 gold ,4 exp, 5 hp, 6 atk, 7 def, 8 lvup
-                s = mage.stat(mage_id)
-                gold = s[3]
-                atk = s[6]
-                #gold check
-                if gold < (i[0] * buy_count):
+                #sell and gold check
+                if buy_count < 1:
+                    None
+                elif gold < (i[0] * buy_count):
                     return print("Not enough gold!")
                 try:  #Bag item count
                     c.execute(
@@ -134,6 +144,7 @@ class travel:
                 print(f"\ngold in bag: {gold - (i[0] * buy_count)}")
 
     def battle(mage_id):
+        print("=o=            In a Journey            =o=\n")
         #difficulty dictionary
         diff = {
             "E": 1,
@@ -148,6 +159,7 @@ class travel:
         #difficulty input
         print("        =o= default difficulty is E =o=")
         tier = input("home | E to A, S to SSS enemy difficulty: ")
+        tier = tier.capitalize()
         if tier == "home":
             return mage.title(), mage.printstat()
         #default difficulty
@@ -157,8 +169,9 @@ class travel:
         else:
             m = diff[tier]
             print("\nDifficulty set to", tier)
-        ent = ["normal", "demon", "mage"]
+        ent = ["normal", "n", "demon", "d", "mage", "m"]
         etype = input("\n=o= home | normal | demon | mage =(?)= ")
+        etype = etype.lower()
         if etype == "home":
             return mage.title(), mage.printstat()
         #default enemies
@@ -211,8 +224,10 @@ class travel:
 
                     #attack result
                     if hp != s[5]:
-                        print(f"\nYou took {s[5]-hp} damage")
+                        print("\n=o=        o        =o=")
+                        print(f"You took {s[5]-hp} damage")
                         print(f"Enemy took {(i[4] * m)-ehp} damage")
+                        print("=o=        o        =o=")
 
                     #enemy status
                     print(f"\nrole: {i[0]} {elvl}")
@@ -231,11 +246,11 @@ class travel:
                     if hp < 1:
                         print("You Died")
                         mage.update(mage_id, -egold, 0)
-                        break
+                        return
                     if ehp < 1:
                         print("Enemy Felled")
                         mage.update(mage_id, egold, eexp)
-                        break
+                        return
 
 
 #Start Menu
@@ -268,13 +283,13 @@ while True:
 while True:
     mage_id = mage_id
     act = input("\n=o= home | bag | travel | shop =(?)= ")
-    if (act == "bag"):
+    if (act == "bag" or act == "b"):
         mage.title()
         mage.bag(mage_id)
-    elif (act == "travel"):
+    elif (act == "travel" or act == "t"):
         mage.title()
         travel.battle(mage_id)
-    elif (act == "shop"):
+    elif (act == "shop" or act == "s"):
         mage.title()
         travel.shop(mage_id)
     else:  #home

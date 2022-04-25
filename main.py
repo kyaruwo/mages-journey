@@ -1,11 +1,6 @@
 import os
 import sqlite3
 
-try:
-    os.chdir("Mage's Journey")
-except:
-    pass
-
 clear = lambda: os.system("cls")
 
 #database
@@ -34,7 +29,7 @@ class mage:
 
     def printstat():
         s = mage.stat(mage_id)
-        #0 name,1 role,2 lvl,3 gold,4 exp,5 hp,6 atk,7 def,8 lvup
+        #0 name, 1 role, 2 lvl, 3 gold, 4 exp, 5 hp, 6 atk, 7 def, 8 lvup
         print(f"\nName: {s[0]}\nrole: {s[1]} {s[2]}")
         print(f"gold: {s[3]} exp: {s[4]}/{s[8]}")
         print(f"atk: {s[6]} hp: {s[5]} def: {s[7]}")
@@ -283,13 +278,13 @@ while True:
 while True:
     mage_id = mage_id
     act = input("\n=o= home | bag | travel | shop =(?)= ")
-    if (act == "bag" or act == "b"):
+    if act == "bag" or act == "b":
         mage.title()
         mage.bag(mage_id)
-    elif (act == "travel" or act == "t"):
+    elif act == "travel" or act == "t":
         mage.title()
         travel.battle(mage_id)
-    elif (act == "shop" or act == "s"):
+    elif act == "shop" or act == "s":
         mage.title()
         travel.shop(mage_id)
     else:  #home

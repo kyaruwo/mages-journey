@@ -101,7 +101,7 @@ class travel:
             ipa.append(i)
         print(f"\ngold in bag {gold}")
         buy = input("\nhome | item: ")
-        if buy == "home":
+        if buy in ["home", "h"]:
             return mage.title(), mage.printstat()
         elif buy not in item:
             mage.title()
@@ -114,7 +114,7 @@ class travel:
                 print(f"price: {i[0]} i_atk: {i[1]} item: {i[2]}")
                 print(f"\ngold in bag {gold}")
                 buy_count = input("\nhome | - sell | buy: ")
-                if buy_count == "home":
+                if buy_count in ["home", "h"]:
                     return mage.title(), mage.printstat()
                 # default buy_count
                 try:
@@ -166,7 +166,7 @@ class travel:
         print("        =o= default difficulty is E =o=")
         tier = input("home | E to A, S to SSS enemy difficulty: ")
         tier = tier.capitalize()
-        if tier == "home":
+        if tier in ["HOME", "H"]:
             return mage.title(), mage.printstat()
         # default difficulty
         if tier not in diff:
@@ -178,7 +178,7 @@ class travel:
         ent = ["normal", "n", "demon", "d", "mage", "m"]
         etype = input("\n=o= home | normal | demon | mage =(?)= ")
         etype = etype.lower()
-        if etype == "home":
+        if etype in ["home", "h"]:
             return mage.title(), mage.printstat()
         # default enemies
         if etype not in ent:
@@ -201,7 +201,7 @@ class travel:
             enemy.append(i[0])
             elist.append(i)
         role = input("\nhome | choose enemy to attack: ")
-        if role == "home":
+        if role in ["home", "h"]:
             return mage.title(), mage.printstat()
         if role not in enemy:  # default to slime
             role = "slime"
@@ -241,7 +241,7 @@ class travel:
                     print(f"atk: {eatk} hp: {ehp} def: {edef}")
 
                     act = input("\nhome | attack(Enter): ")
-                    if act == "home":
+                    if act in ["home", "h"]:
                         mage.title()
                         print("A wise choice indeed!")
                         return mage.printstat()
@@ -292,7 +292,7 @@ while True:
     if act == "resetgame":
         mage.reset()
         break
-    if act == "bag" or act == "b":
+    elif act == "bag" or act == "b":
         mage.title()
         mage.bag(mage_id)
     elif act == "travel" or act == "t":

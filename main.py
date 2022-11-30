@@ -289,16 +289,17 @@ while True:
 while True:
     mage_id = mage_id
     act = input("\n=o= home | bag | travel | shop =(?)= ")
-    if act == "resetgame":
+    act = act.capitalize()
+    if act == "RESETGAME":
         mage.reset()
         break
-    elif act == "bag" or act == "b":
+    elif act in ["BAG", "B"]:
         mage.title()
         mage.bag(mage_id)
-    elif act == "travel" or act == "t":
+    elif act in ["TRAVEL", "T"]:
         mage.title()
         travel.battle(mage_id)
-    elif act == "shop" or act == "s":
+    elif act in ["SHOP", "S"]:
         mage.title()
         travel.shop(mage_id)
     else:  # home

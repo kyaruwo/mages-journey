@@ -101,6 +101,7 @@ class travel:
             ipa.append(i)
         print(f"\ngold in bag {gold}")
         buy = input("\nhome | item: ")
+        buy = buy.lower()
         if buy in ["home", "h"]:
             return mage.title(), mage.printstat()
         elif buy not in item:
@@ -114,6 +115,7 @@ class travel:
                 print(f"price: {i[0]} i_atk: {i[1]} item: {i[2]}")
                 print(f"\ngold in bag {gold}")
                 buy_count = input("\nhome | - sell | buy: ")
+                buy_count = buy_count.lower()
                 if buy_count in ["home", "h"]:
                     return mage.title(), mage.printstat()
                 # default buy_count
@@ -165,7 +167,7 @@ class travel:
         # difficulty input
         print("        =o= default difficulty is E =o=")
         tier = input("home | E to A, S to SSS enemy difficulty: ")
-        tier = tier.capitalize()
+        tier = tier.upper()
         if tier in ["HOME", "H"]:
             return mage.title(), mage.printstat()
         # default difficulty
@@ -289,7 +291,7 @@ while True:
 while True:
     mage_id = mage_id
     act = input("\n=o= home | bag | travel | shop =(?)= ")
-    act = act.capitalize()
+    act = act.upper()
     if act == "RESETGAME":
         mage.reset()
         break

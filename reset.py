@@ -36,7 +36,7 @@ def resetgame():
         print("\nGame Reset\n")
 
     else:
-        print("\nInvalid Input")
+        print("\nInvalid Input\n")
 
     os.system("pause")
     os.system("python main.py")

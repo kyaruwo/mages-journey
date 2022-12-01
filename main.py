@@ -273,7 +273,7 @@ while True:
         break
     except:  # New Mage
         new_journey = input("A new Mage has come, Begin Journey y|n? ")
-        if new_journey != "y":
+        if new_journey not in ["Y", "y"]:
             continue
         c.execute("insert into Mage (name,role,lvl) values (?,?,?)",
                   (mage_name, "mage", 1))

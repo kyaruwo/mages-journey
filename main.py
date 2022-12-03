@@ -66,8 +66,8 @@ class mage:
         s[4] += exp
         c.execute("update Stat set gold = ? where mage_id = ?",
                   (s[3], mage_id))
-        print(f"\n {gold} gold | Gold in Bag {s[3]}")
-        print(f" {exp} exp | Mage exp {s[4]}/{s[8]}")
+        print(f"{gold} gold | Gold in Bag {s[3]}")
+        print(f"{exp} exp | Mage exp {s[4]}/{s[8]}")
         if s[4] < s[8]:
             c.execute("update Stat set exp = ? where mage_id = ?",
                       (s[4], mage_id))
@@ -84,7 +84,7 @@ class mage:
             c.execute("update Stat set def = ? where mage_id = ?",
                       (s[7] + 1, mage_id))
             db.commit()
-            print("\nLevel up!", s[2] + 1)
+            print(f"\nLevel up! {s[2] + 1} \n")
             mage.printstat()
 
     def quit():
@@ -166,7 +166,7 @@ class travel:
                 c.execute("update Stat set atk = ? where mage_id = ?",
                           (atk + (i[1] * buy_count), mage_id))
                 db.commit()
-                print(f"\nBought {buy_count} of {buy}")
+                print(f"\nBought {buy_count} {buy}")
                 print(f"\ngold in bag: {gold - (i[0] * buy_count)}")
 
     def battle(mage_id):
@@ -195,7 +195,7 @@ class travel:
             m = diff[tier]
             print("\n<!> Difficulty set to", tier)
         ent = ["normal", "n", "demon", "d", "mage", "m"]
-        etype = input("\n<?> home | normal | demon | mage : ")
+        etype = input("\n"+64*"-"+"\n\n<?> home | normal | demon | mage : ")
         etype = etype.lower()
         if etype in ["home", "h"]:
             return mage.title(), mage.printstat()
@@ -219,13 +219,13 @@ class travel:
                 )
             enemy.append(i[0])
             elist.append(i)
-        role = input("\n<?> home | choose an enemy to attack : ")
+        role = input("\n"+64*"-"+"\n\n<?> home | choose an enemy to attack : ")
         if role in ["home", "h"]:
             return mage.title(), mage.printstat()
         if role not in enemy:  # default to slime
             role = "slime"
         print("\n<!> Chosen Enemy is a", role)
-        start = input("\npress Enter to battle: ")
+        start = input("\npress Enter to battle : ")
         for i in elist:
             # instance battle
             if i[0] == role:
@@ -267,11 +267,11 @@ class travel:
                     mage.title()
                     # hp check, egold, eexp
                     if hp < 1:
-                        print("You Died")
+                        print("You Died\n")
                         mage.update(mage_id, -egold, 0)
                         return
                     if ehp < 1:
-                        print("Enemy Felled")
+                        print("Enemy Felled\n")
                         mage.update(mage_id, egold, eexp)
                         return
 
@@ -326,5 +326,6 @@ while True:
     else:  # home
         mage.title()
         mage.printstat()
+
 
 # https://github.com/kyaruwo

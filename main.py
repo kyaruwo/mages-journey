@@ -305,7 +305,6 @@ while True:
 
 # Main Menu
 while True:
-    mage_id = mage_id
     act = input("\n"+64*"-"+"\n\n<?> home | bag | travel | shop <?> ")
     act = act.upper()
     if act in ["QUIT", "Q", "EXIT"]:
@@ -326,6 +325,5 @@ while True:
     else:  # home
         mage.title()
         mage.printstat()
-
 
 # https://github.com/kyaruwo

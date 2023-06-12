@@ -1,5 +1,5 @@
 import os
-import init.init as init
+from init import init
 
 
 def clear():

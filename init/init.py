@@ -1,5 +1,6 @@
 def initialize():
-    import os, json, DB
+    import os, json
+    from lib import DB
 
     if os.path.exists(DB.gamedata):
         return

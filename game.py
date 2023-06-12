@@ -24,21 +24,44 @@ def mainmenu():
     print("     (S) status")
     print("     (X) sleep")
     line()
-    res = input(" >>>> ").lower()
-    return res
+    ans = input(" >>>> ").lower()
+    return ans
+
+
+def sleep():
+    clear()
+    print("\n\n\tJourney's End\n")
+
+
+def status():
+    return
+
+
+def inventory():
+    return
+
+
+def market():
+    return
+
+
+def travel():
+    return
 
 
 def main():
     while True:
-        res = mainmenu()
-        if res in ["x", "sleep"]:
-            return
-        if res in ["s", "status"]:
-            continue
-        if res in ["i", "inventory"]:
-            continue
-        if res in ["m", "market"]:
-            continue
+        ans = mainmenu()
+        if ans in ["x", "sleep"]:
+            return sleep()
+        elif ans in ["s", "status"]:
+            status()
+        elif ans in ["i", "inventory"]:
+            inventory()
+        elif ans in ["m", "market"]:
+            market()
+        else:
+            travel()
 
 
 # https://github.com/kyaruwo

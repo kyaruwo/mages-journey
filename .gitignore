@@ -1,5 +1,3 @@
-.vscode
-*.sqlite
 *__pycache__
-test.py
-game.dat
+.vscode
+*.dat

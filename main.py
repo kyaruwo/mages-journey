@@ -1,9 +1,4 @@
-import os
-from init import init
-
-
-def clear():
-    os.system("cls")
+from lib.clear import clear
 
 
 def line():
@@ -29,31 +24,18 @@ def mainmenu():
     return ans
 
 
-def sleep():
-    clear()
-    print("\n\n\tJourney's End\n")
-
-
-def status():
-    return
-
-
-def inventory():
-    return
-
-
-def market():
-    return
-
-
-def travel():
-    return
-
-
 def main():
+    from init import init
+    from game.sleep import sleep
+    from game.status import status
+    from game.inventory import inventory
+    from game.market import market
+    from game.travel import travel
+
     init.initialize()
     while True:
         ans = mainmenu()
+        clear()
         if ans in ["x", "sleep"]:
             return sleep()
         elif ans in ["s", "status"]:

@@ -2,3 +2,4 @@
 *.sqlite
 *__pycache__
 test.py
+game.dat

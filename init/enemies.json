@@ -1,0 +1,130 @@
+[
+    {
+    "name": "slime",
+    "xp": 2,
+    "gold": 1,
+    "hp": 10,
+    "atk": 2,
+    "def": 1
+    },
+    {
+    "name": "wolf",
+    "xp": 6,
+    "gold": 2,
+    "hp": 26,
+    "atk": 6,
+    "def": 4
+    },
+    {
+    "name": "goblin",
+    "xp": 4,
+    "gold": 10,
+    "hp": 40,
+    "atk": 12,
+    "def": 10
+    },
+    {
+    "name": "skeleton",
+    "xp": 14,
+    "gold": 12,
+    "hp": 100,
+    "atk": 24,
+    "def": 18
+    },
+    {
+    "name": "ghost",
+    "xp": 24,
+    "gold": 6,
+    "hp": 200,
+    "atk": 40,
+    "def": 0
+    },
+    {
+    "name": "demon knight",
+    "xp": 36,
+    "gold": 40,
+    "hp": 480,
+    "atk": 80,
+    "def": 100
+    },
+    {
+    "name": "demon general",
+    "xp": 160,
+    "gold": 100,
+    "hp": 1200,
+    "atk": 260,
+    "def": 200
+    },
+    {
+    "name": "demon lord",
+    "xp": 400,
+    "gold": 400,
+    "hp": 6000,
+    "atk": 600,
+    "def": 600
+    },
+    {
+    "name": "demon king",
+    "xp": 999,
+    "gold": 999,
+    "hp": 9999,
+    "atk": 999,
+    "def": 999
+    },
+    {
+    "name": "mage of sloth",
+    "xp": 2000,
+    "gold": 2000,
+    "hp": 10000,
+    "atk": 2000,
+    "def": 1000
+    },
+    {
+    "name": "mage of wrath",
+    "xp": 3000,
+    "gold": 3000,
+    "hp": 15000,
+    "atk": 3000,
+    "def": 3000
+    },
+    {
+    "name": "mage of gluttony",
+    "xp": 4000,
+    "gold": 6000,
+    "hp": 30000,
+    "atk": 3000,
+    "def": 10000
+    },
+    {
+    "name": "mage of envy",
+    "xp": 8000,
+    "gold": 8000,
+    "hp": 60000,
+    "atk": 6000,
+    "def": 14000
+    },
+    {
+    "name": "mage of lust",
+    "xp": 10000,
+    "gold": 12000,
+    "hp": 100000,
+    "atk": 12000,
+    "def": 20000
+    },
+    {
+    "name": "mage of pride",
+    "xp": 60000,
+    "gold": 40000,
+    "hp": 600000,
+    "atk": 100000,
+    "def": 100000
+    },
+    {
+    "name": "mage of greed",
+    "xp": 999999,
+    "gold": 999999,
+    "hp": 9999999,
+    "atk": 999999,
+    "def": 999999
+    }
+]

@@ -1,4 +1,5 @@
 import os
+import init.init as init
 
 
 def clear():
@@ -50,6 +51,7 @@ def travel():
 
 
 def main():
+    init.initialize()
     while True:
         ans = mainmenu()
         if ans in ["x", "sleep"]:

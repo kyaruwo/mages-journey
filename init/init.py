@@ -4,6 +4,7 @@ def initialize():
 
     if os.path.exists(DB.gamedata):
         return
+
     (db, c) = DB.connect()
 
     # TABLES

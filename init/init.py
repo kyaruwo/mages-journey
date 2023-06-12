@@ -22,7 +22,7 @@ def initialize():
         atk int,
         def int
     );
-    create table items(
+    create table market(
         `name` varchar(69) unique,
         atk int,
         price int
@@ -54,7 +54,7 @@ def initialize():
     # ITEMS
     for i in json.loads(open("init/items.json").read()):
         c.execute(
-            "insert into items values (?,?,?)",
+            "insert into market values (?,?,?)",
             [i["name"], i["atk"], i["price"]],
         )
 

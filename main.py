@@ -4,8 +4,14 @@ def clear():
     os.system("cls")
 
 
-def line():
-    print(22 * "-")
+def pause():
+    import os
+
+    os.system("pause")
+
+
+def line(len=22):
+    print(len * "-")
 
 
 def title():

@@ -30,9 +30,14 @@ def initialize():
     );
     create table inventory (
         mageid int,
-        itemid int,
+        itemid int key,
         `count` int
     );
+    create trigger itemzero
+    after update on inventory
+    begin
+        delete from inventory where `count` = 0;
+    end;
         """
     )
 

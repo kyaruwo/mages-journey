@@ -17,11 +17,11 @@ def title():
 
 def mainmenu():
     title()
-    print("     (?) travel")
-    print("     (M) market")
-    print("     (I) inventory")
-    print("     (S) status")
-    print("     (X) sleep")
+    print("     <?> travel")
+    print("     <M> market")
+    print("     <I> inventory")
+    print("     <S> status")
+    print("     <X> sleep")
     line()
     ans = input(" >>>> ").lower()
     return ans

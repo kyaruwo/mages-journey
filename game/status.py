@@ -1,5 +1,5 @@
 def status():
-    from main import title, line
+    from main import line
     from lib import DB
 
     (db, c) = DB.connect()
@@ -7,7 +7,9 @@ def status():
     (lvl, xp, gold) = c.execute("select * from mages").fetchone()
     db.close()
 
-    title()
+    line()
+    print((8 * " ") + "STATUS")
+    line()
     print("     atk", atk)
     print("     lvl", lvl)
     print("      xp", xp)

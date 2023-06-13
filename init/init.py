@@ -20,8 +20,7 @@ def initialize():
         xp int,
         gold int,
         hp int,
-        atk int,
-        def int
+        atk int
     );
     create table market(
         `name` varchar(69) unique,
@@ -53,8 +52,8 @@ def initialize():
     # ENEMIES
     for e in json.loads(open("init/enemies.json").read()):
         c.execute(
-            "insert into enemies values (?,?,?,?,?,?)",
-            [e["name"], e["xp"], e["gold"], e["hp"], e["atk"], e["def"]],
+            "insert into enemies values (?,?,?,?,?)",
+            [e["name"], e["xp"], e["gold"], e["hp"], e["atk"]],
         )
 
     # ITEMS

@@ -35,6 +35,7 @@ def inventory():
             """
         ).fetchall()
     )
+    db.close()
 
     line()
     pause()

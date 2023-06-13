@@ -1,4 +1,7 @@
-from lib.clear import clear
+def clear():
+    import os
+
+    os.system("cls")
 
 
 def line():

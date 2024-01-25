@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("mages journey")
+	fmt.Println("=o= mages journey =o=")
 }

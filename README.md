@@ -1,5 +1,7 @@
 #### Mage's Journey
 
+CLI
+
 -   [ ] status
 -   [ ] inventory
 -   [ ] market

@@ -1,6 +1,6 @@
-#### Mage's Journey
+## Mage's Journey
 
-CLI
+#### CLI
 
 -   [ ] status
 -   [ ] inventory

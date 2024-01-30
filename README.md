@@ -1,6 +1,6 @@
 ## Mage's Journey
 
-#### CLI
+#### todo
 
 -   [ ] status
 -   [ ] inventory

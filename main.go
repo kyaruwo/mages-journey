@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	clear := exec.Command("cmd", "/c", "cls")
+	var clear = exec.Command("cmd", "/c", "cls")
 	clear.Stdout = os.Stdout
 	clear.Run()
 

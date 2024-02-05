@@ -13,9 +13,11 @@ func main() {
 
 	fmt.Println("=o= mages journey =o=")
 
-	fmt.Println("lvl", 0)
-	fmt.Println(" xp", 0)
-	fmt.Println("  g", 0)
-	fmt.Println(" hp", 0)
-	fmt.Println("atk", 0)
+	var lvl, xp, g, hp, atk = 1, 0, 0, 8, 4
+
+	fmt.Println("lvl", lvl)
+	fmt.Println(" xp", xp)
+	fmt.Println("  g", g)
+	fmt.Println(" hp", hp)
+	fmt.Println("atk", atk)
 }

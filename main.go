@@ -13,6 +13,8 @@ func main() {
 
 	fmt.Println("=o= mages journey =o=")
 
+	fmt.Println("\nstats")
+
 	var lvl, xp, g, hp, atk = 1, 0, 0, 8, 4
 
 	fmt.Println("lvl", lvl)

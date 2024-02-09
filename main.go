@@ -22,4 +22,5 @@ func main() {
 	fmt.Println("  g", g)
 	fmt.Println(" hp", hp)
 	fmt.Println("atk", atk)
+
 }

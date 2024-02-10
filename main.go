@@ -19,8 +19,8 @@ func main() {
 	fmt.Println("\nstats")
 	fmt.Println("lvl", lvl)
 	fmt.Println(" xp", xp)
-	fmt.Println("  g", g)
 	fmt.Println(" hp", hp)
 	fmt.Println("atk", atk)
+	fmt.Println("  g", g)
 
 }

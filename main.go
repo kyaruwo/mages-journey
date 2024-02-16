@@ -21,5 +21,7 @@ func main() {
 	fmt.Println("     hp", hp, "  atk", atk)
 	fmt.Println("      g", g)
 
-	fmt.Println("\n >>>> _")
+	fmt.Print("\n\n >>>> ")
+	var op string
+	fmt.Scan(&op)
 }

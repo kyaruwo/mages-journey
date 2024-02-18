@@ -7,18 +7,23 @@ import (
 )
 
 func main() {
+gameloop:
 	title()
 
 	fmt.Println("\n     0 - status")
 
 	fmt.Print("\n>>>> ")
-	var op int
-	fmt.Scan(&op)
+	var op string
+	fmt.Scanln(&op)
 
 	switch op {
-	case 0:
+	case "0":
 		status()
+	default:
+		break
 	}
+
+	goto gameloop
 }
 
 func title() {
@@ -37,4 +42,6 @@ func status() {
 	fmt.Println("    lvl", lvl, "   xp", xp)
 	fmt.Println("     hp", hp, "  atk", atk)
 	fmt.Println("      g", g)
+
+	fmt.Scanln()
 }

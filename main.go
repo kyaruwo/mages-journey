@@ -23,6 +23,7 @@ gameloop:
 		break
 	}
 
+	fmt.Scanln()
 	goto gameloop
 }
 
@@ -35,6 +36,7 @@ func title() {
 
 func status() {
 	title()
+
 	// todo; fetch from database
 	var lvl, xp, g, hp, atk = 1, 0, 0, 8, 4
 
@@ -42,6 +44,4 @@ func status() {
 	fmt.Println("    lvl", lvl, "   xp", xp)
 	fmt.Println("     hp", hp, "  atk", atk)
 	fmt.Println("      g", g)
-
-	fmt.Scanln()
 }

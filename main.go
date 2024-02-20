@@ -20,7 +20,7 @@ gameloop:
 	case "0":
 		status()
 	default:
-		break
+		goto gameloop
 	}
 
 	fmt.Scanln()

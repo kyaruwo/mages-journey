@@ -23,6 +23,7 @@ gameloop:
 		goto gameloop
 	}
 
+	fmt.Print("\nreturn")
 	fmt.Scanln()
 	goto gameloop
 }

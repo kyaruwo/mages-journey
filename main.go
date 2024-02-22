@@ -19,6 +19,14 @@ gameloop:
 	switch op {
 	case "0":
 		status()
+	case "1":
+		inventory()
+	case "2":
+		market()
+	case "3":
+		travel()
+	case "4":
+		sleep()
 	default:
 		goto gameloop
 	}
@@ -46,3 +54,11 @@ func status() {
 	fmt.Println("     hp", hp, "  atk", atk)
 	fmt.Println("      g", g)
 }
+
+func inventory() {}
+
+func market() {}
+
+func travel() {}
+
+func sleep() {}

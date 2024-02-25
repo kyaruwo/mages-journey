@@ -55,10 +55,18 @@ func status() {
 	fmt.Println("      g", g)
 }
 
-func inventory() { title() }
+func inventory() {
+	title()
+}
 
-func market() { title() }
+func market() {
+	title()
+}
 
-func travel() { title() }
+func travel() {
+	title()
+}
 
-func sleep() { title() }
+func sleep() {
+	title()
+}

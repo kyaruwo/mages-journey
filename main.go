@@ -10,11 +10,11 @@ func main() {
 gameloop:
 	title()
 
-	fmt.Println("\n     0 - status")
-	fmt.Println("\n     1 - inventory")
-	fmt.Println("\n     2 - market")
-	fmt.Println("\n     3 - travel")
-	fmt.Println("\n     4 - sleep")
+	fmt.Print("\n     0 - status")
+	fmt.Print("\n     1 - inventory")
+	fmt.Print("\n     2 - market")
+	fmt.Print("\n     3 - travel")
+	fmt.Print("\n     4 - sleep")
 
 	fmt.Print("\n>>>> ")
 	var op string

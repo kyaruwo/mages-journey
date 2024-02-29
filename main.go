@@ -16,7 +16,7 @@ gameloop:
 	fmt.Print("\n     3 - travel")
 	fmt.Print("\n     4 - sleep")
 
-	fmt.Print("\n>>>> ")
+	fmt.Print("\n\n>>>> ")
 	var op string
 	fmt.Scanln(&op)
 

@@ -40,10 +40,14 @@ gameloop:
 	goto gameloop
 }
 
-func title() {
+func clear() {
 	var clear = exec.Command("cmd", "/c", "cls")
 	clear.Stdout = os.Stdout
 	clear.Run()
+}
+
+func title() {
+	clear()
 	fmt.Println("=o= mages journey =o=")
 }
 

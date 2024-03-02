@@ -31,6 +31,7 @@ gameloop:
 		travel()
 	case "4":
 		sleep()
+		return
 	default:
 		goto gameloop
 	}
@@ -82,7 +83,7 @@ func travel() {
 }
 
 func sleep() {
-	title()
+	clear()
 
-	fmt.Println("\n      - sleep -        ")
+	fmt.Print("\n\tJourney's End\n")
 }

@@ -67,19 +67,19 @@ func status() {
 func inventory() {
 	title()
 
-	fmt.Println("\n     - inventory -     ")
+	fmt.Println("\n    - inventory -     ")
 }
 
 func market() {
 	title()
 
-	fmt.Println("\n      - market -       ")
+	fmt.Println("\n     - market -       ")
 }
 
 func travel() {
 	title()
 
-	fmt.Println("\n      - travel -       ")
+	fmt.Println("\n     - travel -       ")
 }
 
 func sleep() {

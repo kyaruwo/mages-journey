@@ -21,15 +21,15 @@ gameloop:
 	fmt.Scanln(&op)
 
 	switch op {
-	case "0":
+	case "0", "s":
 		status()
-	case "1":
+	case "1", "i":
 		inventory()
-	case "2":
+	case "2", "m":
 		market()
-	case "3":
+	case "3", "t":
 		travel()
-	case "4":
+	case "4", "q":
 		sleep()
 		return
 	default:

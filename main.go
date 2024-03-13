@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"os"
-	"os/exec"
+	"mages-journey/game"
+	"mages-journey/gamemod"
 )
 
 func main() {
 gameloop:
-	title()
+	gamemod.Title()
 
 	fmt.Print("\n     0 - status")
 	fmt.Print("\n     1 - inventory")
@@ -22,15 +22,15 @@ gameloop:
 
 	switch op {
 	case "0", "s", "status":
-		status()
+		game.Status()
 	case "1", "i", "inventory":
-		inventory()
+		game.Inventory()
 	case "2", "m", "market":
-		market()
+		game.Market()
 	case "3", "t", "travel":
-		travel()
+		game.Travel()
 	case "4", "q", "sleep":
-		sleep()
+		game.Sleep()
 		return
 	default:
 		goto gameloop
@@ -39,51 +39,4 @@ gameloop:
 	fmt.Print("\nreturn")
 	fmt.Scanln()
 	goto gameloop
-}
-
-func clear() {
-	var clear = exec.Command("cmd", "/c", "cls")
-	clear.Stdout = os.Stdout
-	clear.Run()
-}
-
-func title() {
-	clear()
-	fmt.Println("=o= mages journey =o=")
-}
-
-func status() {
-	title()
-
-	// todo; fetch from database
-	var lvl, xp, g, hp, atk = 1, 0, 0, 8, 4
-
-	fmt.Println("\n      - status -       ")
-	fmt.Println("    lvl", lvl, "   xp", xp)
-	fmt.Println("     hp", hp, "  atk", atk)
-	fmt.Println("      g", g)
-}
-
-func inventory() {
-	title()
-
-	fmt.Println("\n    - inventory -     ")
-}
-
-func market() {
-	title()
-
-	fmt.Println("\n     - market -       ")
-}
-
-func travel() {
-	title()
-
-	fmt.Println("\n     - travel -       ")
-}
-
-func sleep() {
-	clear()
-
-	fmt.Print("\n\tJourney's End\n")
 }

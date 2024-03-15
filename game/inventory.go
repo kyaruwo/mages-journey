@@ -8,5 +8,5 @@ import (
 func Inventory() {
 	gamemod.Title()
 
-	fmt.Println("\n    - inventory -     ")
+	fmt.Println("\n    - inventory -")
 }

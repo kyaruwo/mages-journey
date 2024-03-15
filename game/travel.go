@@ -8,5 +8,5 @@ import (
 func Travel() {
 	gamemod.Title()
 
-	fmt.Println("\n     - travel -       ")
+	fmt.Println("\n     - travel -")
 }

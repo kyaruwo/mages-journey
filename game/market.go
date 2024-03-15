@@ -8,5 +8,5 @@ import (
 func Market() {
 	gamemod.Title()
 
-	fmt.Println("\n     - market -       ")
+	fmt.Println("\n     - market -")
 }

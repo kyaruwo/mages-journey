@@ -1,11 +1,12 @@
 package game
 
 import (
+	"database/sql"
 	"fmt"
 	"mages-journey/gamemod"
 )
 
-func Status() {
+func Status(db *sql.DB) {
 	gamemod.Title()
 
 	// todo; fetch from database

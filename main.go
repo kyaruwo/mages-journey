@@ -1,12 +1,25 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
+	"log"
 	"mages-journey/game"
 	"mages-journey/gamemod"
+
+	_ "github.com/glebarez/go-sqlite"
 )
 
 func main() {
+
+	const DB_FILENAME = "journey.sqlite"
+	gamemod.Initialize(DB_FILENAME)
+	db, err := sql.Open("sqlite", DB_FILENAME)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
 gameloop:
 	gamemod.Title()
 
@@ -22,13 +35,13 @@ gameloop:
 
 	switch op {
 	case "0", "s", "status":
-		game.Status()
+		game.Status(db)
 	case "1", "i", "inventory":
-		game.Inventory()
+		game.Inventory(db)
 	case "2", "m", "market":
-		game.Market()
+		game.Market(db)
 	case "3", "t", "travel":
-		game.Travel()
+		game.Travel(db)
 	case "4", "q", "sleep":
 		game.Sleep()
 		return

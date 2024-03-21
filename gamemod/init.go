@@ -29,9 +29,9 @@ func Initialize(DB_FILENAME string) {
 	defer db.Close()
 	fmt.Println("Created Database")
 
-	InventoryInit(DB_FILENAME, db)
-	MarketInit(DB_FILENAME, db)
 	EnemiesInit(DB_FILENAME, db)
+	MarketInit(DB_FILENAME, db)
+	InventoryInit(DB_FILENAME, db)
 	MageInit(DB_FILENAME, db)
 
 	time.Sleep(4269 * time.Millisecond)

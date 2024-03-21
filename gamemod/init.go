@@ -37,76 +37,6 @@ func Initialize(DB_FILENAME string) {
 	time.Sleep(4269 * time.Millisecond)
 }
 
-func InventoryInit(DB_FILENAME string, db *sql.DB) {
-	_, err := db.Exec(`
-	create table inventory(mage_id int, item_id int, count int);
-	`)
-	if err != nil {
-		db.Close()
-		os.Remove(DB_FILENAME)
-		log.Fatal(err)
-	}
-	fmt.Println("Created Inventory Table")
-}
-
-type Item struct {
-	name  string
-	atk   int
-	price int
-}
-
-func MarketInit(DB_FILENAME string, db *sql.DB) {
-	_, err := db.Exec(`
-	create table market(
-		"name" varchar(69) unique,
-		atk int,
-		price int
-	);
-	`)
-	if err != nil {
-		db.Close()
-		os.Remove(DB_FILENAME)
-		log.Fatal(err)
-	}
-	fmt.Println("Created Market Table")
-
-	ITEMS := []Item{
-		{"stick", 1, 10},
-		{"branch", 12, 120},
-		{"staff", 44, 440},
-		{"staff of sloth", 100, 1000},
-		{"staff of wrath", 200, 2000},
-		{"staff of gluttony", 300, 3000},
-		{"staff of envy", 400, 4000},
-		{"staff of lust", 600, 6000},
-		{"staff of pride", 800, 8000},
-		{"staff of greed", 1000, 10000},
-	}
-
-	for _, item := range ITEMS {
-		stmt, err := db.Prepare(`
-		insert into
-			market("name", atk, price)
-		values
-			(?, ?, ?);
-		`)
-		if err != nil {
-			db.Close()
-			os.Remove(DB_FILENAME)
-			log.Fatal(err)
-		}
-		_, err = stmt.Exec(&item.name, &item.atk, &item.price)
-		if err != nil {
-			db.Close()
-			os.Remove(DB_FILENAME)
-			log.Fatal(err)
-		}
-		stmt.Close()
-
-		fmt.Println("Created", item.name)
-	}
-}
-
 type Enemy struct {
 	name string
 	xp   int
@@ -173,6 +103,76 @@ func EnemiesInit(DB_FILENAME string, db *sql.DB) {
 
 		fmt.Println("Summoned", enemy.name)
 	}
+}
+
+type Item struct {
+	name  string
+	atk   int
+	price int
+}
+
+func MarketInit(DB_FILENAME string, db *sql.DB) {
+	_, err := db.Exec(`
+	create table market(
+		"name" varchar(69) unique,
+		atk int,
+		price int
+	);
+	`)
+	if err != nil {
+		db.Close()
+		os.Remove(DB_FILENAME)
+		log.Fatal(err)
+	}
+	fmt.Println("Created Market Table")
+
+	ITEMS := []Item{
+		{"stick", 1, 10},
+		{"branch", 12, 120},
+		{"staff", 44, 440},
+		{"staff of sloth", 100, 1000},
+		{"staff of wrath", 200, 2000},
+		{"staff of gluttony", 300, 3000},
+		{"staff of envy", 400, 4000},
+		{"staff of lust", 600, 6000},
+		{"staff of pride", 800, 8000},
+		{"staff of greed", 1000, 10000},
+	}
+
+	for _, item := range ITEMS {
+		stmt, err := db.Prepare(`
+		insert into
+			market("name", atk, price)
+		values
+			(?, ?, ?);
+		`)
+		if err != nil {
+			db.Close()
+			os.Remove(DB_FILENAME)
+			log.Fatal(err)
+		}
+		_, err = stmt.Exec(&item.name, &item.atk, &item.price)
+		if err != nil {
+			db.Close()
+			os.Remove(DB_FILENAME)
+			log.Fatal(err)
+		}
+		stmt.Close()
+
+		fmt.Println("Created", item.name)
+	}
+}
+
+func InventoryInit(DB_FILENAME string, db *sql.DB) {
+	_, err := db.Exec(`
+	create table inventory(mage_id int, item_id int, count int);
+	`)
+	if err != nil {
+		db.Close()
+		os.Remove(DB_FILENAME)
+		log.Fatal(err)
+	}
+	fmt.Println("Created Inventory Table")
 }
 
 type Mage struct {

@@ -1,5 +1,13 @@
 ## Mage's Journey
 
+build
+
 ```
-go run main.go
+go build
+```
+
+run
+
+```
+mages-journey
 ```

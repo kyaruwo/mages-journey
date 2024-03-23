@@ -3,7 +3,8 @@ package game
 import (
 	"database/sql"
 	"fmt"
-	"mages-journey/gamemod"
+
+	"github.com/kyaruwo/mages-journey/gamemod"
 )
 
 func Inventory(db *sql.DB) {

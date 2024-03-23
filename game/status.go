@@ -4,7 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"mages-journey/gamemod"
+
+	"github.com/kyaruwo/mages-journey/gamemod"
 )
 
 func Status(db *sql.DB) {

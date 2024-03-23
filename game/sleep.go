@@ -2,7 +2,8 @@ package game
 
 import (
 	"fmt"
-	"mages-journey/gamemod"
+
+	"github.com/kyaruwo/mages-journey/gamemod"
 )
 
 func Sleep() {

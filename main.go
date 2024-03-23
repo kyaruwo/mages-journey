@@ -4,10 +4,11 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"mages-journey/game"
-	"mages-journey/gamemod"
 
 	_ "github.com/glebarez/go-sqlite"
+
+	"github.com/kyaruwo/mages-journey/game"
+	"github.com/kyaruwo/mages-journey/gamemod"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module mages-journey
+module github.com/kyaruwo/mages-journey
 
 go 1.21.4
 

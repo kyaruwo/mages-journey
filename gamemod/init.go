@@ -25,6 +25,12 @@ func Initialize(DB_FILENAME string) {
 		log.Fatal(err)
 	}
 	defer db.Close()
+	fmt.Println("Initialize Database")
+
+	err = db.Ping()
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println("Created Database")
 
 	EnemiesInit(DB_FILENAME, db)

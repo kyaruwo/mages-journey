@@ -22,8 +22,6 @@ func Initialize(DB_FILENAME string) {
 
 	db, err := sql.Open("sqlite", DB_FILENAME)
 	if err != nil {
-		db.Close()
-		os.Remove(DB_FILENAME)
 		log.Fatal(err)
 	}
 	defer db.Close()
@@ -56,9 +54,7 @@ func EnemiesInit(DB_FILENAME string, db *sql.DB) {
 	);
 	`)
 	if err != nil {
-		db.Close()
-		os.Remove(DB_FILENAME)
-		log.Fatal(err)
+		cremlog(db, DB_FILENAME, err)
 	}
 	fmt.Println("Created Enemies Table")
 
@@ -89,15 +85,11 @@ func EnemiesInit(DB_FILENAME string, db *sql.DB) {
 			(?, ?, ?, ?, ?);
 		`)
 		if err != nil {
-			db.Close()
-			os.Remove(DB_FILENAME)
-			log.Fatal(err)
+			cremlog(db, DB_FILENAME, err)
 		}
 		_, err = stmt.Exec(&enemy.name, &enemy.xp, &enemy.gold, &enemy.xp, &enemy.atk)
 		if err != nil {
-			db.Close()
-			os.Remove(DB_FILENAME)
-			log.Fatal(err)
+			cremlog(db, DB_FILENAME, err)
 		}
 		stmt.Close()
 
@@ -120,9 +112,7 @@ func MarketInit(DB_FILENAME string, db *sql.DB) {
 	);
 	`)
 	if err != nil {
-		db.Close()
-		os.Remove(DB_FILENAME)
-		log.Fatal(err)
+		cremlog(db, DB_FILENAME, err)
 	}
 	fmt.Println("Created Market Table")
 
@@ -147,15 +137,11 @@ func MarketInit(DB_FILENAME string, db *sql.DB) {
 			(?, ?, ?);
 		`)
 		if err != nil {
-			db.Close()
-			os.Remove(DB_FILENAME)
-			log.Fatal(err)
+			cremlog(db, DB_FILENAME, err)
 		}
 		_, err = stmt.Exec(&item.name, &item.atk, &item.price)
 		if err != nil {
-			db.Close()
-			os.Remove(DB_FILENAME)
-			log.Fatal(err)
+			cremlog(db, DB_FILENAME, err)
 		}
 		stmt.Close()
 
@@ -168,9 +154,7 @@ func InventoryInit(DB_FILENAME string, db *sql.DB) {
 	create table inventory(mage_id int, item_id int, count int);
 	`)
 	if err != nil {
-		db.Close()
-		os.Remove(DB_FILENAME)
-		log.Fatal(err)
+		cremlog(db, DB_FILENAME, err)
 	}
 	fmt.Println("Created Inventory Table")
 }
@@ -186,9 +170,7 @@ func MageInit(DB_FILENAME string, db *sql.DB) {
 	create table mages(lvl int, xp int, gold int);
 	`)
 	if err != nil {
-		db.Close()
-		os.Remove(DB_FILENAME)
-		log.Fatal(err)
+		cremlog(db, DB_FILENAME, err)
 	}
 	fmt.Println("Created Mages Table")
 
@@ -199,18 +181,20 @@ func MageInit(DB_FILENAME string, db *sql.DB) {
 		(?, ?, ?);
 	`)
 	if err != nil {
-		db.Close()
-		os.Remove(DB_FILENAME)
-		log.Fatal(err)
+		cremlog(db, DB_FILENAME, err)
 	}
 	MAGE := Mage{1, 0, 0}
 	_, err = stmt.Exec(&MAGE.lvl, &MAGE.xp, &MAGE.gold)
 	if err != nil {
-		db.Close()
-		os.Remove(DB_FILENAME)
-		log.Fatal(err)
+		cremlog(db, DB_FILENAME, err)
 	}
 	stmt.Close()
 
 	fmt.Println("Summoned Mage")
+}
+
+func cremlog(db *sql.DB, DB_FILENAME string, err error) {
+	db.Close()
+	os.Remove(DB_FILENAME)
+	log.Fatal(err)
 }

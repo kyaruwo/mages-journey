@@ -14,7 +14,7 @@ func Status(db *sql.DB) {
 	var id, lvl, xp, g int
 	err := db.QueryRow(`
 	select
-		rowid, *
+		rowid, lvl, xp, gold
 	from
 		mages
 	`).Scan(&id, &lvl, &xp, &g)

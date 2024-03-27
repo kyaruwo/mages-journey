@@ -57,7 +57,7 @@ func EnemiesInit(DB_FILENAME string, db *sql.DB) {
 		gold int,
 		hp int,
 		atk int
-	);
+	)
 	`)
 	if err != nil {
 		cremlog(db, DB_FILENAME, err)
@@ -88,7 +88,7 @@ func EnemiesInit(DB_FILENAME string, db *sql.DB) {
 		insert into
 			enemies("name", xp, gold, hp, atk)
 		values
-			(?, ?, ?, ?, ?);
+			(?, ?, ?, ?, ?)
 		`)
 		if err != nil {
 			cremlog(db, DB_FILENAME, err)
@@ -115,7 +115,7 @@ func MarketInit(DB_FILENAME string, db *sql.DB) {
 		"name" varchar(69) unique,
 		atk int,
 		price int
-	);
+	)
 	`)
 	if err != nil {
 		cremlog(db, DB_FILENAME, err)
@@ -140,7 +140,7 @@ func MarketInit(DB_FILENAME string, db *sql.DB) {
 		insert into
 			market("name", atk, price)
 		values
-			(?, ?, ?);
+			(?, ?, ?)
 		`)
 		if err != nil {
 			cremlog(db, DB_FILENAME, err)
@@ -157,7 +157,7 @@ func MarketInit(DB_FILENAME string, db *sql.DB) {
 
 func InventoryInit(DB_FILENAME string, db *sql.DB) {
 	_, err := db.Exec(`
-	create table inventory(mage_id int, item_id int, count int);
+	create table inventory(mage_id int, item_id int, count int)
 	`)
 	if err != nil {
 		cremlog(db, DB_FILENAME, err)
@@ -173,7 +173,7 @@ type Mage struct {
 
 func MageInit(DB_FILENAME string, db *sql.DB) {
 	_, err := db.Exec(`
-	create table mages(lvl int, xp int, gold int);
+	create table mages(lvl int, xp int, gold int)
 	`)
 	if err != nil {
 		cremlog(db, DB_FILENAME, err)
@@ -184,7 +184,7 @@ func MageInit(DB_FILENAME string, db *sql.DB) {
 	insert into
 		mages(lvl, xp, gold)
 	values
-		(?, ?, ?);
+		(?, ?, ?)
 	`)
 	if err != nil {
 		cremlog(db, DB_FILENAME, err)
